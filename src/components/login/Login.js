@@ -35,29 +35,38 @@ export default function Login(){
 
     const handleLogin = async e => {
         e.preventDefault();
+        
         const respuesta = await loginAPI(form);
         if(respuesta.status !== 200){
 
             console.log(respuesta.respuesta);
             setLoginAlert(
-                <p className="text-danger alert alert-danger">{respuesta.respuesta}</p>
+                <p className="text-danger alert alert-danger mt-3">{respuesta.respuesta}</p>
             );
             
         }else{
             console.log(respuesta.respuesta);
             setLoginAlert(
-              <p className="text-success alert alert-success">LOGIN SUCCESS!</p>
-          );
+              <p className="text-success alert alert-success mt-3">LOGIN SUCCESS!</p>
+            );
+           
+            localStorage.setItem("ACCESS_TOKEN", respuesta.token);
+            localStorage.setItem("ID", respuesta.tokenData.user_id[0].usuario_id);
+            localStorage.setItem("USUARIO", respuesta.tokenData.nombre);
+            
+            setTimeout(()=>{
+              window.location.href = '/';
+            },500);
+            
         }
-                
+          
     }
-
-
+    
     //RETORNAMOS LA VISTA 
 
     return (
       <div className='card col-lg-4 col-md-9 m-auto p-5 bg-dark'>
-        <div className='card-body login-card-body'>
+        <div className='card-body'>
             <h2 className="text-light">LOGIN</h2>
         </div>
 
@@ -78,14 +87,19 @@ export default function Login(){
               name='pass'
               placeholder='Password'
             />
-          </div>
+          </div>   
 
-          {loginAlert}
+          <button type='submit' className='btn btn-primary btn-lg col-12'>
+            Ingresar
+          </button> 
 
-          <button type='submit' className='btn btn-primary btn-md mw-100'>
-            Confirmar
-          </button>
+         
         </form>
+
+        <div>
+          {loginAlert}
+          <span className="card-footer text-light mt-3 d-block">MisLibrosApp</span>
+        </div>
       </div>
     );
 }
