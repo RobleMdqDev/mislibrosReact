@@ -1,0 +1,139 @@
+div .body {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: 2s;
+}
+
+div .body.active {
+    opacity: 0;
+}
+
+.body.active div.formulario {
+    visibility: hidden;
+}
+
+.login {
+    position: relative;
+    top: 20%;
+    left: -50px;
+    background: linear-gradient(to Left, rgba(0, 0, 0, 0.8), transparent);
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 350px;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    border-right: 5px solid rgba(196, 17, 17, 0.753);
+    transition: width 1s;
+}
+
+.login:hover {
+    width: 650px;
+}
+
+.login:hover h5 {
+    visibility: collapse;
+}
+
+.login:hover .formulario {
+    visibility: visible;
+    transition-delay: .8s;
+}
+
+.logo img {
+    width: 300px;
+    transition-delay: 2s;
+}
+
+h5 {
+    position: relative;
+    top: 15px;
+    left: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.tipografia {
+    position: relative;
+    top: 0;
+    left: -28px;
+}
+
+.tipografia h3 {
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    font-size: 26px;
+}
+
+.formulario {
+    position: relative;
+    top: 0;
+    left: -50px;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+}
+
+button.boton {
+    position: relative;
+    border: none;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid #33ee6b8e;
+    border-bottom: 1px solid #33ee6b8e;
+    border-radius: 30px;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-transform: uppercase;
+    overflow: hidden;
+    width: 90%;
+    height: 50px;
+    margin: 5px auto;
+    transition: transform 0.5s;
+    z-index: 1;
+}
+
+.boton:hover {
+    letter-spacing: 3px;
+}
+
+button.boton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+    transform: skewX(45deg) translateX(0);
+    transition: transform 0.5s;
+}
+
+button.boton:hover::before {
+    transform: skewX(45deg) translateX(120px);
+}
+
+button.boton::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: 30px;
+    height: 10px;
+    background: rgb(5, 221, 23);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(5, 221, 23), 0 0 15px rgb(5, 221, 23), 0 0 30px rgb(5, 221, 23), 0 0 60px rgb(5, 221, 23);
+    transition: box-shadow, width 0.5s;
+}
+
+button:hover.boton::after {
+    box-shadow: 0 0 10px rgb(5, 221, 23), 0 0 20px rgb(5, 221, 23), 0 0 40px rgb(5, 221, 23), 0 0 80px rgb(5, 221, 23);
+    width: 100px;
+}

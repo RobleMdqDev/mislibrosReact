@@ -1,17 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppons', sans-serif;
+}
+
 .App {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    height: 110vh;
-    background-image: url("./img/honeycomb-34984_1280.png");
+    height: 100vh;
+    background-image: url("./img/fondolibro2.jpg");
     background-position: center;
-    background-attachment: fixed;
-    background-color: rgba(129, 228, 255, 1);
+    background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 
-.card {
+.App::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.login {
     box-shadow: 0px 10px 25px black;
+    border-radius: 5px;
+    background-color: rgba(1, 35, 44, 0.95);
+}
+
+.alerta {
+    display: block;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .App-logo {
@@ -23,8 +51,11 @@
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
     }
-    .fondo-color {
-        animation: Fondo-color-cambio infinite 5s linear;
+    .vibra {
+        animation: vibrar normal 0.2s linear;
+    }
+    .agrandar {
+        animation: agranda normal 0.2s linear;
     }
 }
 
@@ -45,12 +76,30 @@
     color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-    from {
+@keyframes vibrar {
+    0% {
         transform: rotate(0deg);
     }
-    to {
-        transform: rotate(360deg);
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes agranda {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
     }
 }
 

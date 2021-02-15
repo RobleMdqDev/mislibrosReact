@@ -27,7 +27,7 @@ export default function App() {
   
 
     <div className="App">
-    <Header />
+    
         <div className="mt-5" style={{minHeight: "65vh"}}>
          
              
@@ -35,7 +35,7 @@ export default function App() {
         
          
         </div>
-    <Footer />
+    
     </div> //Fin .App
   )
 }
