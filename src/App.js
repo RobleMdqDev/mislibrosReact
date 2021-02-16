@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import jwtDecode from 'jwt-decode';
+import Swal from 'sweetalert2';
 
 // Componentes estaticos
-import Header from './components/header/Header'
+import Nav from './components/nav/Nav'
 import Footer from './components/footer/Footer'
 
 // Componente Login
@@ -28,6 +29,8 @@ export default function App() {
 
     <div className="App">
     
+        <Nav />
+        
         <div className="mt-5" style={{minHeight: "65vh"}}>
          
              

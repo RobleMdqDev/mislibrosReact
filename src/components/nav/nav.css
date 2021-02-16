@@ -1,0 +1,177 @@
+.barra {
+    background: #000;
+    height: 90px;
+    border-radius: 0 0 0 50%;
+}
+
+.barra a.toggle {
+    position: fixed;
+    width: 200px;
+    display: flex;
+    text-decoration: none;
+    color: white;
+    background-color: #000;
+    border-radius: 0 0 60% 0;
+    padding: 20px;
+    z-index: 100000;
+}
+
+.barra a.toggle:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.barra a.toggle:hover img {
+    transform: scale(1.1);
+}
+
+.barra a.toggle:hover div {
+    transform: scale(1.1);
+}
+
+.barra a.toggle img {
+    width: 80px;
+}
+
+.barra a.toggle div {
+    margin: 15px 0 0 10px;
+}
+
+.barra a.toggle p {
+    margin: 0;
+}
+
+.barra div.usuariolog {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 85%;
+    height: 90px;
+    width: 200px;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.barra div.usuariolog a {
+    margin: 5px 0 0 20px;
+    font-size: 40px;
+}
+
+.barra div.usuariolog a:hover {
+    transform: scale(1.1);
+}
+
+.navegacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.navegacion.active {
+    visibility: visible;
+}
+
+.navegacion span {
+    position: absolute;
+    top: -100%;
+    left: calc(16.6% * var(--i));
+    width: 17%;
+    height: 100%;
+    border: 5px solid rgba(0, 0, 0, 0.25);
+    transition: 0.8s;
+    transition-delay: calc(0.10s * var(--i));
+    opacity: 1;
+    border: 2px solid black;
+}
+
+.navegacion span:nth-child(1) {
+    background-image: url("../../img/lomo1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.navegacion span:nth-child(2) {
+    background-image: url("../../img/lomo2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.navegacion span:nth-child(3) {
+    background-image: url("../../img/lomo3.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.navegacion span:nth-child(4) {
+    background-image: url("../../img/lomo4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.navegacion span:nth-child(5) {
+    background-image: url("../../img/lomo5.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.navegacion span:nth-child(6) {
+    background-image: url("../../img/lomo6.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.navegacion.active span {
+    top: 0;
+}
+
+.navegacion ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+    transform: translateX(-100px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    transition-delay: 0s;
+    padding: 50px;
+}
+
+.navegacion.active ul {
+    transform: translateX(0px);
+    opacity: 1;
+    visibility: visible;
+}
+
+.navegacion ul li {
+    list-style: none;
+}
+
+.navegacion ul li a {
+    text-decoration: none;
+    font-size: 3em;
+    font-weight: 700;
+    color: white;
+    display: inline-block;
+    padding: 5px 20px;
+}
+
+.navegacion ul li a:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+}
